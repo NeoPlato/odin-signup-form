@@ -50,19 +50,42 @@ button {
 
 @import url('https://fonts.googleapis.com/css?family=Courier+Prime');
 
+:root {
+    --body-backup-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --logo-height: 17.5vh;
+    --img-container-width: clamp(200px, 40vw, 400px);
+    --img-logo-margin: 20vh;
+    --img-logo-height: 80%;
+    --img-logo-font-scale: 0.6;
+    --attribution-margin: 2rem;
+    --form-container-gap: 0.5rem;
+    --form-container-left-margin: 2rem;
+    --form-container-bolded-weight: 500;
+    --form-container-items-width: min(50vw, 600px);
+    --description-size: 1.25rem;
+    --description-spacing: 1.5rem;
+    --form-heading-margin: 1rem;
+    --form-elements-gap: 1rem;
+    --form-entry-width: clamp(250px, 35%, 450px);
+    --form-entry-label-font-size: 80%;
+    --form-input-font-size: 85%;
+    --form-input-password-error-font-size: 75%;
+    --form-btn-margin: 1.5rem;
+    --form-btn-min-width: 120px;
+}
+
 body {
     display: flex;
-    background-color: #f5f5f5;
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --logo-height: 17.5vh;
+    background-color: var(--body-bg-color);
+    font-family: Inter, var(--body-backup-font);
 }
 
 .img-container {
+    width: var(--img-container-width);
+    height: 100vh;
     background-image: url("./img/foliage.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    width: clamp(200px, 40vw, 400px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,121 +93,130 @@ body {
 
 .img-logo {
     height: var(--logo-height);
+    margin-top: var(--img-logo-margin);
+    background-color: var(--img-logo-bg-color);
     width: 100%;
-    margin-top: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0000007a;
 }
 
 .img-logo img {
-    height: 80%;
+    height: var(--img-logo-height);
 }
 
 .logo-name {
-    color: white;
-    font-size: min(var(--logo-height)*0.6, 5rem);
+    color: var(--img-logo-color);
+    font-size: min(var(--logo-height)*var(--img-logo-font-scale), 5rem);
     font-family: Norse-Bold;
 }
 
 .attribution {
+    margin-bottom: var(--attribution-margin);
     margin-top: auto;
-    margin-bottom: 2rem;
-    color: white;
 }
 
-.attribution a {
-    color: white;
+.attribution, .attribution a {
+    color: var(--attribution-color);
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--form-container-gap);
     flex: 1 1 0;
 }
 
 .desc > p, form h2 {
-    font-weight: 500;
+    font-weight: var(--form-container-bolded-weight);
 }
 
 .form-container > * {
-    width: min(50vw, 621px);
-    margin-left: 2rem;
+    width: var(--form-container-items-width);
+    margin-left: var(--form-container-left-margin);
 }
 
 .desc p {
-    font-size: 1.25rem;
+    font-size: var(--description-size);
 }
 
 .desc p + p {
-    margin-top: 1.5rem;
+    margin-top: var(--description-spacing);
 }
 
 form > h2 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--form-heading-margin);
 }
 
 form ul {
     display: flex;
     flex-flow: row wrap;
-    gap: 1rem 1rem;
+    gap: var(--form-elements-gap) var(--form-elements-gap);
 }
 
 form ul li {
+    width: var(--form-entry-width);
     display: flex;
     flex-direction: column;
-    width: clamp(250px, 35%, 450px);
 }
 
 form li > label {
-    font-size: 0.8rem;
+    font-size: var(--form-entry-label-font-size);
 }
 
 .form-container form {
-    background-color: white;
+    background-color: var(--form-bg-color);
     margin-left: 0;
     width: 100%;
-    padding: 2rem;
+    padding: var(--form-container-left-margin);
 }
 
 form li input {
     padding: 5px;
-    border: 1px solid #E5E7EB;
+    border: 1px solid var(--form-input-border-color);
     width: 90%;
-    font-size: 85%;
+    font-size: var(--form-input-font-size);
 }
 
 form li input:focus {
-    border-color: blue;
-    box-shadow: 3px 2px 4px 0px #7b7b7bba;
+    border-color: var(--form-input-focus-border-color);
+    box-shadow: var(--form-input-focus-box-shadow);
 }
 
 form li input:not(:placeholder-shown, :focus):invalid {
-    border-color: #e43124;
+    border-color: var(--form-input-invalid-border-color);
 }
 
-.form-container div:last-child a {
-    text-decoration: none;
-    color: #596D48;
-    font-weight: bold;
+form input[type="password"].error {
+    border-color: var(--form-input-invalid-border-color);
+}
+
+form ul li.error::after {
+    content: "*Passwords do not match";
+    font-size: var(--form-input-password-error-font-size);
+    color: var(--form-input-invalid-border-color);
 }
 
 form button {
-    margin-top: 1.5rem;
+    margin-top: var(--form-btn-margin);
     padding: 10px;
-    width: max(120px, 10rem);
+    width: max(var(--form-btn-min-width), 10rem);
     border-radius: 5%/25%;
-    background-color: #596D48;
+    background-color: var(--form-btn-bg-color);
     border: none;
-    color: white;
+    color: var(--form-btn-color);
     font-weight: bold;
-    box-shadow: 0px 3px 5px 1px #bababa9c;
+    box-shadow: var(--form-btn-box-shadow);
 }
 
 form button:focus {
     transform: scale(1.05);
     transition: 0.5s;
+}
+
+.form-container div:last-child a {
+    text-decoration: none;
+    color: var(--form-btn-bg-color);
+    font-weight: bold;
 }
