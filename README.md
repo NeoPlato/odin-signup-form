@@ -10,9 +10,9 @@ I'm the one who made it.
 
 ### Skill level
 
-*    [ ]  Create the basic template layout
+*    [x]  Create the basic template layout
+*    [x]  Modify the CSS to use variables
 *    [ ]  Do some artistic work with the existing template
 *    [ ]  Implement whatever final design I choose
-*    [ ]  Modify the CSS to use variables
 *    [ ]  Dark mode
 *    [ ]  Final beautifying.
