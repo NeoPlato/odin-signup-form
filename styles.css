@@ -51,13 +51,16 @@ button {
 @import url('https://fonts.googleapis.com/css?family=Courier+Prime');
 
 :root {
-    --body-backup-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --logo-height: 17.5vh;
-    --img-container-width: clamp(200px, 40vw, 400px);
-    --img-logo-margin: 20vh;
+    --body-backup-font: system-ui,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    --logo-height: 22.5vh;
+    --img-container-width: calc(2/3 * 100vh);
+    --img-logo-margin: 24vh;
     --img-logo-height: 80%;
-    --img-logo-font-scale: 0.6;
-    --attribution-margin: 2rem;
+    --img-logo-font-scale: 0.5;
+    --attribution-margin: 1rem;
+    --attribution-font-size: 0.8rem;
     --form-container-gap: 0.5rem;
     --form-container-left-margin: 2rem;
     --form-container-bolded-weight: 500;
@@ -70,6 +73,7 @@ button {
     --form-entry-label-font-size: 80%;
     --form-input-font-size: 85%;
     --form-input-password-error-font-size: 75%;
+    --form-input-password-error-margin: 0.4rem;
     --form-btn-margin: 1.5rem;
     --form-btn-min-width: 120px;
 }
@@ -88,7 +92,6 @@ button {
         --form-btn-bg-color: #596d48;
         --form-btn-color: white;
         --form-btn-box-shadow: 0 3px 5px 1px #bababa9c;
-
     }
 }
 
@@ -125,7 +128,7 @@ body {
 
 .logo-name {
     color: var(--img-logo-color);
-    font-size: min(var(--logo-height)*var(--img-logo-font-scale), 5rem);
+    font-size: min(var(--logo-height)*var(--img-logo-font-scale), 7.5rem);
     font-family: Norse-Bold;
 }
 
@@ -136,6 +139,7 @@ body {
 
 .attribution, .attribution a {
     color: var(--attribution-color);
+    font-size: var(--attribution-font-size);
 }
 
 .form-container {
@@ -214,6 +218,7 @@ form ul li.error::after {
     content: "*Passwords do not match";
     font-size: var(--form-input-password-error-font-size);
     color: var(--form-input-invalid-border-color);
+    margin-top: var(--form-input-password-error-margin);
 }
 
 form button {
