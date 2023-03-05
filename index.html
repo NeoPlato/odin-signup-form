@@ -26,7 +26,7 @@
       </p>
       <p>You <em>know</em> you want to.</p>
     </div>
-    <form action="" method="get">
+    <form action="" method="get" id="signup-form">
       <h2>Let's do this!</h2>
       <ul>
         <li>
@@ -52,10 +52,12 @@
           <input type="password" id="pass-2" minlength="8" placeholder="*8 characters minimum" required>
         </li>
       </ul>
-      <button type="submit">Create Account</button>
     </form>
     <script src="./scripts.js"></script>
-    <div>Already have an account? <a href="">Log in</a></div>
+    <div class="button-container">
+      <button type="submit" form="signup-form">Create Account</button>
+      <p>Already have an account? <a href="">Log in</a></p>
+    </div>
   </div>
 </body>
 </html>
