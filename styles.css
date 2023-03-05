@@ -77,7 +77,9 @@ button {
     --form-elements-gap: 1rem;
     --form-entry-width: clamp(225px, 40%, 400px);
     --form-entry-label-font-size: 80%;
+    --form-input-width: 90%;
     --form-input-font-size: 85%;
+    --form-input-border-radius: 2%/20%;
     --form-input-password-error-font-size: 75%;
     --form-input-password-error-margin: 0.4rem;
     --form-btn-margin: 1.5rem;
@@ -87,19 +89,19 @@ button {
 @media (prefers-color-scheme: light) {
     :root {
         color-scheme: light;
-        --body-bg-color: #f5f5f5;
-        --img-logo-bg-color: #0000007a;
+        --body-bg-color: #dddddd;
+        --img-logo-bg-color: #0000008f;
         --img-logo-color: white;
         --attribution-color: white;
-        --form-bg-color: white;
+        --form-bg-color: #e5e5e5;
         --form-box-shadow: 0px 5px 14px -4px #000000ba;
         --form-input-border-color: #E5E7EB;
         --form-input-focus-border-color: blue;
-        --form-input-focus-box-shadow: 3px 2px 4px 0 #7B7B7BBA;
-        --form-input-invalid-border-color: #E43124;
-        --form-btn-bg-color: #596d48;
+        --form-input-focus-box-shadow: 0px 2px 4px 0px #7B7B7BBA;
+        --form-input-invalid-border-color: #ff4040;
+        --form-btn-bg-color: #4c5c3d;
         --form-btn-color: white;
-        --form-btn-box-shadow: 0 3px 5px 1px #bababa9c;
+        --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
     }
 }
 
@@ -199,17 +201,18 @@ form li label {
 
 .form-container form {
     background-color: var(--form-bg-color);
-    margin-left: 0;
-    width: 100%;
     padding: var(--form-container-left-margin);
     box-shadow: var(--form-box-shadow);
+    margin-left: 0;
+    width: 100%;
 }
 
 form li input {
-    padding: 5px;
     border: 1px solid var(--form-input-border-color);
-    width: 90%;
     font-size: var(--form-input-font-size);
+    border-radius: var(--form-input-border-radius);
+    padding: 5px;
+    width: var(--form-input-width);
 }
 
 form li input:focus {
@@ -239,14 +242,14 @@ form ul li.error::after {
 
 .button-container button {
     margin: var(--form-btn-margin) 0;
-    padding: 10px;
     width: max(var(--form-btn-min-width), 10rem);
-    border-radius: 5%/25%;
     background-color: var(--form-btn-bg-color);
-    border: none;
     color: var(--form-btn-color);
-    font-weight: bold;
     box-shadow: var(--form-btn-box-shadow);
+    padding: 10px;
+    border-radius: 5%/25%;
+    border: none;
+    font-weight: bold;
 }
 
 .button-container button:focus {
