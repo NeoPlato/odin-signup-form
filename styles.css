@@ -72,7 +72,7 @@ button {
     --description-spacing: 1.5rem;
     --form-heading-margin: 1rem;
     --form-elements-gap: 1rem;
-    --form-entry-width: clamp(250px, 35%, 450px);
+    --form-entry-width: clamp(225px, 40%, 400px);
     --form-entry-label-font-size: 80%;
     --form-input-font-size: 85%;
     --form-input-password-error-font-size: 75%;
@@ -179,6 +179,7 @@ form ul {
     display: flex;
     flex-flow: row wrap;
     gap: var(--form-elements-gap) var(--form-elements-gap);
+    max-width: 1250px;
 }
 
 form ul li {
