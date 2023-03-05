@@ -39,7 +39,7 @@ button {
 /* Formatting */
 
 @font-face {
-    font-family: "Norse-Bold";
+    font-family: Norse-Bold;
     src: url("./fonts/Norse-Bold.otf");
 }
 
@@ -48,7 +48,10 @@ button {
     src: url("./fonts/Inter.ttf");
 }
 
-@import url('https://fonts.googleapis.com/css?family=Courier+Prime');
+@font-face {
+    font-family: Solway;
+    src: url("./fonts/Solway.woff2");
+}
 
 :root {
     --body-backup-font: system-ui,
@@ -80,6 +83,7 @@ button {
 
 @media (prefers-color-scheme: light) {
     :root {
+        color-scheme: light;
         --body-bg-color: #f5f5f5;
         --img-logo-bg-color: #0000007a;
         --img-logo-color: white;
@@ -183,7 +187,8 @@ form ul li {
     flex-direction: column;
 }
 
-form li > label {
+form li label {
+    font-family: Solway, var(--body-backup-font);
     font-size: var(--form-entry-label-font-size);
 }
 
