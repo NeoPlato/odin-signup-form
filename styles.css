@@ -41,16 +41,19 @@ button {
 @font-face {
     font-family: Norse-Bold;
     src: url("./fonts/Norse-Bold.otf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
     src: url("./fonts/Inter.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Solway;
     src: url("./fonts/Solway.woff2");
+    font-display: swap;
 }
 
 :root {
@@ -63,7 +66,7 @@ button {
     --img-logo-height: 80%;
     --img-logo-font-scale: 0.5;
     --attribution-margin: 1rem;
-    --attribution-font-size: 0.8rem;
+    --attribution-font-size: max(12px, 0.8rem);
     --form-container-gap: 0.5rem;
     --form-container-left-margin: 2rem;
     --form-container-bolded-weight: 500;
@@ -108,7 +111,7 @@ body {
 .img-container {
     width: var(--img-container-width);
     height: 100vh;
-    background-image: url("./img/foliage.jpg");
+    background-image: url("./img/foliage.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
