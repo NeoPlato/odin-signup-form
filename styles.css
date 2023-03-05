@@ -198,6 +198,7 @@ form li label {
     margin-left: 0;
     width: 100%;
     padding: var(--form-container-left-margin);
+    box-shadow: 0px 5px 14px -4px #000000ba;
 }
 
 form li input {
