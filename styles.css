@@ -95,12 +95,36 @@ button {
         --attribution-color: white;
         --form-bg-color: #e5e5e5;
         --form-box-shadow: 0px 5px 14px -4px #000000ba;
-        --form-input-border-color: #E5E7EB;
+        --form-input-bg-color: white;
+        --form-input-border-color: var(--form-bg-color);
+        --form-input-placeholder-color: #888888;
         --form-input-focus-border-color: blue;
         --form-input-focus-box-shadow: 0px 2px 4px 0px #7B7B7BBA;
         --form-input-invalid-border-color: #ff4040;
         --form-btn-bg-color: #4c5c3d;
         --form-btn-color: white;
+        --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --body-bg-color: #2e3235;
+        --img-logo-bg-color: #0000008f;
+        --img-logo-color: white;
+        --attribution-color: white;
+        --form-bg-color: #424c51;
+        --form-box-shadow: -6px 5px 10px -4px #7f7f7fba;
+        --form-input-bg-color: #d0d0d0;
+        --form-input-border-color: var(--form-bg-color);
+        --form-input-placeholder-color: #30373b;
+        --form-input-color: #1f4154;
+        --form-input-focus-border-color: #82e0ff;
+        --form-input-focus-box-shadow: 0px 2px 3px 0px #aeaeae8c;
+        --form-input-invalid-border-color: #ffbebe;
+        --form-btn-bg-color: #f0e1c6;
+        --form-btn-color: #34260e;
         --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
     }
 }
@@ -208,9 +232,11 @@ form li label {
 }
 
 form li input {
+    background-color: var(--form-input-bg-color);
     border: 1px solid var(--form-input-border-color);
     font-size: var(--form-input-font-size);
     border-radius: var(--form-input-border-radius);
+    color: var(--form-input-color, black);
     padding: 5px;
     width: var(--form-input-width);
 }
@@ -218,6 +244,10 @@ form li input {
 form li input:focus {
     border-color: var(--form-input-focus-border-color);
     box-shadow: var(--form-input-focus-box-shadow);
+}
+
+form li input::placeholder {
+    color: var(--form-input-placeholder-color);
 }
 
 form li input:not(:placeholder-shown, :focus):invalid {
