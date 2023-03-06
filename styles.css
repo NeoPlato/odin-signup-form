@@ -39,12 +39,6 @@ button {
 /* Formatting */
 
 @font-face {
-    font-family: Norse-Bold;
-    src: url("./fonts/Norse-Bold.otf");
-    font-display: swap;
-}
-
-@font-face {
     font-family: Inter;
     src: url("./fonts/Inter.ttf");
     font-display: swap;
@@ -89,19 +83,18 @@ button {
 @media (prefers-color-scheme: light) {
     :root {
         color-scheme: light;
-        --body-bg-color: #dddddd;
-        --img-logo-bg-color: #0000008f;
-        --img-logo-color: white;
+        --body-bg-color: #d8b99e;
+        --body-text-color: #333333;
         --attribution-color: white;
-        --form-bg-color: #e5e5e5;
-        --form-box-shadow: 0px 5px 14px -4px #000000ba;
-        --form-input-bg-color: white;
+        --form-bg-color: #b29784;
+        --form-box-shadow: 0px 5px 10px -4px #000000ba;
+        --form-input-bg-color: #e6e6e6;
         --form-input-border-color: var(--form-bg-color);
-        --form-input-placeholder-color: #888888;
-        --form-input-focus-border-color: blue;
+        --form-input-placeholder-color: #454545;
+        --form-input-focus-border-color: #15009b;
         --form-input-focus-box-shadow: 0px 2px 4px 0px #7B7B7BBA;
-        --form-input-invalid-border-color: #ff4040;
-        --form-btn-bg-color: #4c5c3d;
+        --form-input-invalid-border-color: #440c0c;
+        --form-btn-bg-color: #1b2a2f;
         --form-btn-color: white;
         --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
     }
@@ -110,21 +103,20 @@ button {
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: dark;
-        --body-bg-color: #2e3235;
-        --img-logo-bg-color: #0000008f;
-        --img-logo-color: white;
+        --body-bg-color: #294450;
+        --body-text-color: white;
         --attribution-color: white;
-        --form-bg-color: #424c51;
-        --form-box-shadow: -6px 5px 10px -4px #7f7f7fba;
-        --form-input-bg-color: #d0d0d0;
+        --form-bg-color: #3a4e57;
+        --form-box-shadow: 0px 5px 10px -4px #7f7f7fba;
+        --form-input-bg-color: #666666;
         --form-input-border-color: var(--form-bg-color);
-        --form-input-placeholder-color: #30373b;
-        --form-input-color: #1f4154;
-        --form-input-focus-border-color: #82e0ff;
+        --form-input-placeholder-color: #eeeeee;
+        --form-input-color: #f7f7f7;
+        --form-input-focus-border-color: #6fb0a0;
         --form-input-focus-box-shadow: 0px 2px 3px 0px #aeaeae8c;
-        --form-input-invalid-border-color: #ffbebe;
-        --form-btn-bg-color: #f0e1c6;
-        --form-btn-color: #34260e;
+        --form-input-invalid-border-color: #ffc0c0;
+        --form-btn-bg-color: #5cc6f0;
+        --form-btn-color: #100b04;
         --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
     }
 }
@@ -133,31 +125,18 @@ body {
     display: flex;
     background-color: var(--body-bg-color);
     font-family: Inter, var(--body-backup-font);
+    color: var(--body-text-color);
 }
 
 .img-container {
     width: var(--img-container-width);
     height: 100vh;
-    background-image: url("./img/foliage.webp");
+    background-image: url("./img/bird.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.img-logo {
-    height: var(--logo-height);
-    margin-top: var(--img-logo-margin);
-    background-color: var(--img-logo-bg-color);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.img-logo img {
-    height: var(--img-logo-height);
 }
 
 .logo-name {
