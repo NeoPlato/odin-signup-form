@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="light dark">
+  <meta name="description" content="A sign up form for a basic service that doesn't exist; it is only an exercise for demonstrating knowledge of form concepts.">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="shortcut icon" href="./img/form.svg">
+</head>
+<body>
+  <div class="img-container">
+    <div class="attribution">
+      Photo by <a href="https://unsplash.com/@kevinmueller">Kevin Mueller</a> on 
+      <a href="https:///www.unsplash.com">Unsplash</a>
+    </div>
+  </div>
+  <div class="form-container">
+    <div class="desc">
+      <p>
+        Sign up <em>now</em> and join our mailing service with articles on new birds every week.
+      </p>
+      <p>Come on. You <em>know</em> you want to.</p>
+    </div>
+    <form action="" method="get" id="signup-form">
+      <h2>Let's do this!</h2>
+      <ul>
+        <li>
+          <label for="first-name">FIRST NAME*</label>
+          <input type="text" id="first-name" placeholder="John" required></li>
+        <li>
+          <label for="last-name">LAST NAME*</label>
+          <input type="text" id="last-name" placeholder="Conway" required></li>
+        <li>
+          <label for="email">EMAIL*</label>
+          <input type="email" id="email" placeholder="someemail@gmail.com" required>
+        </li>
+        <li>
+          <label for="tel-number">PHONE NUMBER</label>
+          <input type="tel" id="tel-number">
+        </li>
+        <li>
+          <label for="pass-1">PASSWORD*</label>
+          <input type="password" id="pass-1" minlength="8" placeholder="*8 characters minimum" required>
+        </li>
+        <li>
+          <label for="pass-2">CONFIRM PASSWORD*</label>
+          <input type="password" id="pass-2" minlength="8" placeholder="*8 characters minimum" required>
+        </li>
+      </ul>
+    </form>
+    <script src="./scripts.js"></script>
+    <div class="button-container">
+      <button type="submit" form="signup-form">Create Account</button>
+      <p>Already have an account? <a href="./">Log in</a></p>
+    </div>
+  </div>
+</body>
+</html>

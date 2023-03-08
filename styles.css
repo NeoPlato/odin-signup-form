@@ -1,0 +1,273 @@
+/* Minimal reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+  
+ol, ul {
+    list-style: none;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 100%;
+  outline: none;
+}
+
+/* Formatting */
+
+@font-face {
+    font-family: Inter;
+    src: url("./fonts/Inter.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Solway;
+    src: url("./fonts/Solway.woff2");
+    font-display: swap;
+}
+
+:root {
+    --body-backup-font: system-ui,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    --logo-height: 22.5vh;
+    --img-container-width: calc(2/3 * 100vh);
+    --img-logo-margin: 24vh;
+    --img-logo-height: 80%;
+    --img-logo-font-scale: 0.5;
+    --attribution-margin: 1rem;
+    --attribution-font-size: max(12px, 0.8rem);
+    --form-container-gap: 0.5rem;
+    --form-container-left-margin: 2rem;
+    --form-container-bolded-weight: 500;
+    --form-container-items-width: min(50vw, 600px);
+    --description-size: 1.25rem;
+    --description-spacing: 1.5rem;
+    --form-heading-margin: 1rem;
+    --form-elements-gap: 1rem;
+    --form-entry-width: clamp(225px, 40%, 400px);
+    --form-entry-label-font-size: 80%;
+    --form-input-width: 90%;
+    --form-input-font-size: 85%;
+    --form-input-border-radius: 2%/20%;
+    --form-input-password-error-font-size: 75%;
+    --form-input-password-error-margin: 0.4rem;
+    --form-btn-margin: 1.5rem;
+    --form-btn-min-width: 120px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --body-bg-color: #d8b99e;
+        --body-text-color: #333333;
+        --attribution-color: white;
+        --form-bg-color: #b29784;
+        --form-box-shadow: 0px 5px 10px -4px #000000ba;
+        --form-input-bg-color: #e6e6e6;
+        --form-input-border-color: var(--form-bg-color);
+        --form-input-placeholder-color: #454545;
+        --form-input-focus-border-color: #15009b;
+        --form-input-focus-box-shadow: 0px 2px 4px 0px #7B7B7BBA;
+        --form-input-invalid-border-color: #440c0c;
+        --form-btn-bg-color: #1b2a2f;
+        --form-btn-color: white;
+        --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --body-bg-color: #294450;
+        --body-text-color: white;
+        --attribution-color: white;
+        --form-bg-color: #3a4e57;
+        --form-box-shadow: 0px 5px 10px -4px #7f7f7fba;
+        --form-input-bg-color: #666666;
+        --form-input-border-color: var(--form-bg-color);
+        --form-input-placeholder-color: #eeeeee;
+        --form-input-color: #f7f7f7;
+        --form-input-focus-border-color: #6fb0a0;
+        --form-input-focus-box-shadow: 0px 2px 3px 0px #aeaeae8c;
+        --form-input-invalid-border-color: #ffc0c0;
+        --form-btn-bg-color: #5cc6f0;
+        --form-btn-color: #100b04;
+        --form-btn-box-shadow: 0 2px 5px 1px #5c5c5c9c;
+    }
+}
+
+body {
+    display: flex;
+    background-color: var(--body-bg-color);
+    font-family: Inter, var(--body-backup-font);
+    color: var(--body-text-color);
+}
+
+.img-container {
+    width: var(--img-container-width);
+    height: 100vh;
+    background-image: url("./img/bird.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-name {
+    color: var(--img-logo-color);
+    font-size: min(var(--logo-height)*var(--img-logo-font-scale), 7.5rem);
+    font-family: Norse-Bold;
+}
+
+.attribution {
+    margin-bottom: var(--attribution-margin);
+    margin-top: auto;
+}
+
+.attribution, .attribution a {
+    color: var(--attribution-color);
+    font-size: var(--attribution-font-size);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--form-container-gap);
+    flex: 1 1 0;
+}
+
+.desc > p, form h2 {
+    font-weight: var(--form-container-bolded-weight);
+}
+
+.form-container > * {
+    width: var(--form-container-items-width);
+    margin-left: var(--form-container-left-margin);
+}
+
+.desc p {
+    font-size: var(--description-size);
+}
+
+.desc p + p {
+    margin-top: var(--description-spacing);
+}
+
+form > h2 {
+    margin-bottom: var(--form-heading-margin);
+}
+
+form ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--form-elements-gap) var(--form-elements-gap);
+    max-width: 1250px;
+}
+
+form ul li {
+    width: var(--form-entry-width);
+    display: flex;
+    flex-direction: column;
+}
+
+form li label {
+    font-family: Solway, var(--body-backup-font);
+    font-size: var(--form-entry-label-font-size);
+}
+
+.form-container form {
+    background-color: var(--form-bg-color);
+    padding: var(--form-container-left-margin);
+    box-shadow: var(--form-box-shadow);
+    margin-left: 0;
+    width: 100%;
+}
+
+form li input {
+    background-color: var(--form-input-bg-color);
+    border: 1px solid var(--form-input-border-color);
+    font-size: var(--form-input-font-size);
+    border-radius: var(--form-input-border-radius);
+    color: var(--form-input-color, black);
+    padding: 5px;
+    width: var(--form-input-width);
+}
+
+form li input:focus {
+    border-color: var(--form-input-focus-border-color);
+    box-shadow: var(--form-input-focus-box-shadow);
+}
+
+form li input::placeholder {
+    color: var(--form-input-placeholder-color);
+}
+
+form li input:not(:placeholder-shown, :focus):invalid {
+    border-color: var(--form-input-invalid-border-color);
+}
+
+form input[type="password"].error {
+    border-color: var(--form-input-invalid-border-color);
+}
+
+form ul li.error::after {
+    content: "*Passwords do not match";
+    font-size: var(--form-input-password-error-font-size);
+    color: var(--form-input-invalid-border-color);
+    margin-top: var(--form-input-password-error-margin);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container button {
+    margin: var(--form-btn-margin) 0;
+    width: max(var(--form-btn-min-width), 10rem);
+    background-color: var(--form-btn-bg-color);
+    color: var(--form-btn-color);
+    box-shadow: var(--form-btn-box-shadow);
+    padding: 10px;
+    border-radius: 5%/25%;
+    border: none;
+    font-weight: bold;
+}
+
+.button-container button:focus {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.button-container a {
+    text-decoration: none;
+    color: var(--form-btn-bg-color);
+    font-weight: bold;
+}
