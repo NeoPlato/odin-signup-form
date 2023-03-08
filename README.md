@@ -12,7 +12,7 @@ I'm the one who made it.
 
 *    [x]  Create the basic template layout
 *    [x]  Modify the CSS to use variables
-*    [ ]  Do some artistic work with the existing template
-*    [ ]  Implement whatever final design I choose
-*    [ ]  Dark mode
+*    [x]  Do some artistic work with the existing template
+*    [x]  Implement whatever final design I choose
+*    [x]  Dark mode
 *    [ ]  Final beautifying.
